@@ -20,11 +20,11 @@ Everything below is a placeholder. Use your editor's find-and-replace across
 
 | Placeholder | Find | Replace with |
 |---|---|---|
-| Business name | `Redline Dumpsters` | Your real business name |
-| Phone number | `(816) 555-0142` and `tel:+18165550142` | Your real number |
-| Email | `info@redlinedumpsters.com` | Your real email |
-| Address | `123 Placeholder St, Kansas City, MO 64155` | Your real address |
-| Pricing | `$355`, `$395`, `$465`, `$550` | Your real rates |
+| Business name | `Rose Roll-Offs LLC` | Your real business name |
+| Phone number | `(816) 582-2269` and `tel:+18165822269` | Your real number |
+| Email | `roserolloffs@gmail.com.com` | Your real email |
+| Address | `Weston, MO and surrounding` | Your real address |
+| Pricing | `$370` | Your real rates |
 | Service area cities | the `<ul class="area-list">` list | Cities you actually serve |
 | Testimonials | the "Sample Customer" cards | Real reviews once you have them |
 
