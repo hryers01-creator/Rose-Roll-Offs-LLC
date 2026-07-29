@@ -480,6 +480,70 @@
   </div>
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-q');
+  question.addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Quote form — submits to Formspree via fetch (no page reload)
+const quoteForm = document.getElementById('quoteForm');
+const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
+const formSubmitBtn = document.getElementById('formSubmitBtn');
+
+if (quoteForm) {
+  quoteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formSuccess.classList.remove('show');
+    formError.classList.remove('show');
+    formSubmitBtn.disabled = true;
+    formSubmitBtn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(quoteForm.action, {
+        method: 'POST',
+        body: new FormData(quoteForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formSuccess.classList.add('show');
+        quoteForm.reset();
+      } else {
+        formError.classList.add('show');
+      }
+    } catch (err) {
+      formError.classList.add('show');
+    } finally {
+      formSubmitBtn.disabled = false;
+      formSubmitBtn.textContent = 'Send Request';
+    }
+  });
+}
+</script>
 </body>
 </html>
