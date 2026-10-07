@@ -397,7 +397,7 @@
          Formspree gives you after creating a form at formspree.io
          Example: action="https://formspree.io/f/xyzabc123"
          ============================================================ -->
-    <form class="quote-form" id="quoteForm" action="https://formspree.io/f/mvzeqybw" method="POST">
+     <form class="quote-form" id="quoteForm" action="https://formspree.io/f/mvzeqybw" method="POST">
       <h3>Request a Free Quote</h3>
       <p class="form-sub">Fill this out and we'll get back to you within one business day.</p>
 
@@ -406,34 +406,50 @@
       <div class="form-row">
         <div class="form-field">
           <label for="fname">First Name</label>
-          <input type="text" id="fname" name="First Name" required>
+          <input type="text" id="fname" name="First Name" autocomplete="given-name" required>
         </div>
         <div class="form-field">
           <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="Last Name" required>
+          <input type="text" id="lname" name="Last Name" autocomplete="family-name" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="Phone" required>
+          <input type="tel" id="phone" name="Phone" autocomplete="tel" required>
         </div>
         <div class="form-field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="Email" required>
+          <input type="email" id="email" name="Email" autocomplete="email" required>
         </div>
       </div>
+
+      <!-- NEW: Delivery address -->
+      <div class="form-field">
+        <label for="street">Delivery Address</label>
+        <input type="text" id="street" name="Delivery Address" autocomplete="street-address" placeholder="Street address" required>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="city">City</label>
+          <input type="text" id="city" name="City" autocomplete="address-level2" required>
+        </div>
+        <div class="form-field">
+          <label for="zip">ZIP Code</label>
+          <input type="text" id="zip" name="ZIP Code" autocomplete="postal-code" inputmode="numeric" maxlength="10" required>
+        </div>
+      </div>
+      <!-- END new address fields -->
+
       <div class="form-field">
         <label for="message">Project Details</label>
-        <textarea id="message" name="Project Details" placeholder="Tell us about your project, delivery address, and timing..."></textarea>
+        <textarea id="message" name="Project Details" placeholder="Tell us about your project, preferred delivery date, and any other deatals you want us to know."></textarea>
       </div>
       <button type="submit" class="btn btn-red btn-block" id="formSubmitBtn">Send Request</button>
       <p class="form-note">Submissions are sent straight to your inbox via Formspree.</p>
-      <div class="form-success" id="formSuccess">Thanks! Your request has been sent — we'll get back to you within one business day.</div>
+      <div class="form-success" id="formSuccess">Thanks! Your request has been sent — we'll get back to you within one - two business day.</div>
       <div class="form-error" id="formError">Something went wrong sending your request. Please call us directly at <a href="tel:+18165822269" style="color:var(--red-bright);">(816) 582-2269</a>.</div>
     </form>
-  </div>
-</section>
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="site-footer">
