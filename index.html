@@ -403,14 +403,9 @@
 
       <input type="hidden" name="_subject" value="New quote request — Rose Roll-Offs website">
 
-      <div class="form-row">
-        <div class="form-field">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="First Name" autocomplete="given-name" required>
-        </div>
-        <div class="form-field">
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="Last Name" autocomplete="family-name" required>
+      <div class="form-field">
+        <label for="name">First and Last Name</label>
+        <input type="text" id="name" name="Name" autocomplete="name" required>
         </div>
       </div>
       <div class="form-row">
@@ -438,12 +433,15 @@
           <label for="zip">ZIP Code</label>
           <input type="text" id="zip" name="ZIP Code" autocomplete="postal-code" inputmode="numeric" maxlength="10" required>
         </div>
+        <div class="form-field">
+          <label for="delivery-date">Expected Delivery Date</label>
+          <input type="date" id="delivery-date" name="Expected Delivery Date" style="color-scheme: dark;" required>
+        </div>  
       </div>
-      <!-- END new address fields -->
 
       <div class="form-field">
         <label for="message">Project Details</label>
-        <textarea id="message" name="Project Details" placeholder="Tell us about your project, preferred delivery date, and any other deatals you want us to know."></textarea>
+        <textarea id="message" name="Project Details" placeholder="Tell us about your project and any other deatals you want us to know."></textarea>
       </div>
       <button type="submit" class="btn btn-red btn-block" id="formSubmitBtn">Send Request</button>
       <p class="form-note">Submissions are sent straight to your inbox via Formspree.</p>
